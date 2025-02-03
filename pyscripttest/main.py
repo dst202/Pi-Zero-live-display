@@ -1,12 +1,18 @@
 import tweepy
 import time
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 # Twitter API credentials (Replace with your own keys)
-API_KEY = "your-api-key"
-API_SECRET = "your-api-secret"
-ACCESS_TOKEN = "your-access-token"
-ACCESS_SECRET = "your-access-secret"
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_SECRET = os.getenv("ACCESS_SECRET")
+
+
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
